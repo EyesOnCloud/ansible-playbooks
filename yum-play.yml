@@ -1,0 +1,10 @@
+- name: Configure Repo
+  hosts: all
+  become: yes
+  tasks:
+    - name: Add the repository
+      yum_repository:
+        name: epel
+        description: Play Repository
+        baseurl: https://dl.fedoraproject.org/pub/epel/epel-release-latest-10.noarch.rpm
+        gpgcheck: no
