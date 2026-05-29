@@ -1,0 +1,14 @@
+[dev]
+eoc-node1
+[test]
+eoc-node2
+[prod]
+eoc-node3
+eoc-node2
+[balancer]
+eoc-node1
+[webservers]
+eoc-node3
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3.12
