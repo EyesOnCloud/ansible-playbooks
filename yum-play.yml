@@ -8,3 +8,4 @@
         description: Play Repository
         baseurl: https://dl.fedoraproject.org/pub/epel/epel-release-latest-10.noarch.rpm
         gpgcheck: no
+        enabled: false

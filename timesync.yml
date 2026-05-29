@@ -1,0 +1,12 @@
+- name: NTP Server
+  hosts: all
+  vars:
+    timesync_ntp_providers: chrony
+    timesysnc_ntp_servers:
+      - hostname: 192.168.100.150
+        iburst: true
+  roles:
+    - rhel-system-roles.timesync
+  post_tasks:
+    - name: set timezone
+      command: "timedatectl set-timezone Asia/Kolkata"
