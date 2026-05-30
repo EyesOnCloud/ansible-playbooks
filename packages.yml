@@ -1,0 +1,24 @@
+- name: Install and configure packages
+  hosts: dev,test,prod
+  become: yes
+  tasks:
+    - name: Install packages
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - php
+        - mariadb
+- name: Install and configure packages2
+  hosts: dev
+  become: yes
+  tasks:
+    - name: Install packages
+      yum:
+        name: "@RPM Development Tools"
+        state: latest
+    - name: Install packages
+      yum:
+        name: "*"
+        state: latest
+        exclude: "kernel*"
